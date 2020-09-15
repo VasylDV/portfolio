@@ -1,0 +1,67 @@
+@import "~src/assets/styles/breakpoints";
+$footer-height: 70px;
+$header-height: 70px;
+$header-font-size: 20px;
+$footer-font-size: 10px;
+
+:host {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "content content"
+    "footer footer";
+  grid-template-rows: auto 1fr auto;
+  background: rgb(0,212,255);
+  background: linear-gradient(30deg, rgba(0,212,255,1) 2%, rgba(17,12,156,0.034348773689163115) 100%, rgba(2,0,36,1) 100%);
+}
+
+.main-header {
+  height: $header-height;
+  font-size: $header-font-size;
+  grid-area: header;
+  display: grid;
+  grid-template-areas:
+    "empty nav";
+
+  .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    grid-area: empty;
+
+    @include respond(md) {
+      grid-area: unset;
+      display: none;
+    }
+
+    img {
+      height: 80%;
+    }
+
+  }
+
+  app-nav {
+    grid-area: nav;
+  }
+
+  @include respond(md) {
+    grid-template-areas:
+      "icon"
+      "nav";
+  }
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  height: $footer-height;
+  margin: 0;
+  padding: 0;
+  font-size: $footer-font-size;
+  grid-area: footer;
+  display: grid;
+  place-items: center;
+}

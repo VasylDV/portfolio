@@ -1,0 +1,14 @@
+@import "~src/assets/styles/breakpoints";
+
+:host {
+  display: flex;
+  justify-content: center;
+
+  @include respond(md) {
+    display: none;
+
+    &.show {
+      display: flex;
+    }
+  }
+}

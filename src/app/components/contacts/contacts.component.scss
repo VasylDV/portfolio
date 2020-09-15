@@ -1,0 +1,13 @@
+@import "~src/assets/styles/mixin";
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .h1 {
+    font-size: 30px;
+  }
+
+  @include hide-on-mobile();
+}

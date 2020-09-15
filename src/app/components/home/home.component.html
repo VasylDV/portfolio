@@ -1,0 +1,9 @@
+<div class="home" [class.hidden]="!(this.toggle.showObs$ | async)">
+  <div class="me">
+    <img [src]="image" alt="author" />
+  </div>
+  <div class="info">
+    <app-info></app-info>
+  </div>
+</div>
+

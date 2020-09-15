@@ -1,0 +1,61 @@
+.info {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "text";
+
+  .title {
+    font-size: 35px;
+    grid-area: title;
+    display: flex;
+    align-items: flex-end;
+
+    .upper {
+      font-size: 55px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    @media (max-width: 720px) {
+      justify-content: center;
+    }
+  }
+
+  .text {
+    grid-area: text;
+    display: flex;
+    margin-left: 30px;
+    font-size: 20px;
+
+    @media (max-width: 720px) {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    .action {
+      padding: 10px 20px;
+      width: 120px;
+      outline: none;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+
+      &.hire {
+        background-color: black;
+        margin-right: 30px;
+      }
+
+      &.know {
+        background-color: blue;
+      }
+    }
+  }
+}

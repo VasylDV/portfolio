@@ -1,0 +1,16 @@
+@import "~src/assets/styles/breakpoints";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio {
+
+  @include respond(md) {
+    &.hidden {
+      display: none;
+    }
+  }
+}

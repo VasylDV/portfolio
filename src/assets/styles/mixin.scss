@@ -1,0 +1,9 @@
+@import "breakpoints";
+
+@mixin hide-on-mobile {
+  @include respond(md) {
+    &.hidden {
+      display: none;
+    }
+  }
+}

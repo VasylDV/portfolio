@@ -1,0 +1,57 @@
+@import '~src/assets/styles/breakpoints';
+@import '~src/assets/styles/mixin';
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "me info";
+
+  @include hide-on-mobile;
+
+  @include respond(md) {
+    grid-template-areas:
+      "me"
+      "info";
+    grid-template-columns: 1fr;
+  }
+}
+
+img {
+  object-fit: contain;
+  max-height: calc(100vh - 150px);
+}
+
+.me {
+  display: flex;
+  justify-content: flex-end;
+
+  @include respond(md) {
+    justify-content: center;
+  }
+}
+
+.info {
+  display: grid;
+  place-items: center;
+
+}
+
+.layer-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: transparent;
+  justify-content: flex-start;
+  align-items: center;
+
+  opacity: 0.3;
+  color: #fff;
+  font-size: 35px;
+  font-family: 'Nunito', 'sans-serif';
+  z-index: 0;
+}
+
